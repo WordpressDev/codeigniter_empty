@@ -27,6 +27,7 @@
     
     ini_get('date.timezone') != '' || date_default_timezone_set('GMT');
     define('C_DS', DIRECTORY_SEPARATOR);
+    defined('C_UNIT_TEST') || define('C_UNIT_TEST', FALSE);
 
 /*
  *---------------------------------------------------------------

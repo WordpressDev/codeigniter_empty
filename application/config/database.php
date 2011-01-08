@@ -54,6 +54,7 @@ switch (C_ENVIRONMENT) {
         $active_group = 'production';
         break;
 }
+C_UNIT_TEST == FALSE || $active_group = 'unit_tests';
 $active_record = TRUE;
 
 $db = array();
@@ -105,6 +106,22 @@ $db['production']['dbcollat'] = 'utf8_unicode_ci';
 $db['production']['swap_pre'] = '';
 $db['production']['autoinit'] = TRUE;
 $db['production']['stricton'] = FALSE;
+
+$db['unit_tests']['hostname'] = 'CHANGEME';
+$db['unit_tests']['username'] = 'CHANGEME';
+$db['unit_tests']['password'] = 'CHANGEME';
+$db['unit_tests']['database'] = 'CHANGEME';
+$db['unit_tests']['dbdriver'] = 'mysql';
+$db['unit_tests']['dbprefix'] = '';
+$db['unit_tests']['pconnect'] = FALSE;
+$db['unit_tests']['db_debug'] = TRUE;
+$db['unit_tests']['cache_on'] = FALSE;
+$db['unit_tests']['cachedir'] = '';
+$db['unit_tests']['char_set'] = 'utf8';
+$db['unit_tests']['dbcollat'] = 'utf8_unicode_ci';
+$db['unit_tests']['swap_pre'] = '';
+$db['unit_tests']['autoinit'] = TRUE;
+$db['unit_tests']['stricton'] = TRUE;
 
 
 /* End of file database.php */
