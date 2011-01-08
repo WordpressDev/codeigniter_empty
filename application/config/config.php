@@ -9,9 +9,23 @@
 | WITH a trailing slash:
 |
 |	http://example.com/
+| 
+| Accent Interactive addition: we use the environments to dynamically 
+| set error reporting.
 |
+| @TODO Add this section to config.php again, on updating CI!
 */
-$config['base_url']	= "http://example.com/";
+switch (C_ENVIRONMENT) {
+    case 'development':
+        $config['base_url'] = "http://localhost/codeigniter_empty_install/public_html/";
+        break;
+    case 'staging':
+        $config['base_url'] = "http://www.CHANGEME.com/";
+        break;
+    default:
+        $config['base_url'] = "http://www.CHANGEME.com/";
+        break;
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -172,8 +186,20 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
 |
+| Accent Interactive addition: we use the environments to dynamically 
+| set error reporting.
+|
+| @TODO Add this section to config.php again, on updating CI!
 */
-$config['log_threshold'] = 0;
+    if (C_ENVIRONMENT == 'development') {
+        $config['log_threshold'] = 4;
+    }
+    elseif (C_ENVIRONMENT == 'staging') {
+        $config['log_threshold'] = 1;
+    }
+    else {
+        $config['log_threshold'] = 1;
+    }
 
 /*
 |--------------------------------------------------------------------------

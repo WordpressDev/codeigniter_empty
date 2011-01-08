@@ -36,26 +36,75 @@
 |
 | The $active_record variables lets you determine whether or not to load
 | the active record class
+|
+| Accent Interactive addition: we use the environments to dynamically 
+| set which database to use.
+|
+| @TODO Add this section to config.php again, on updating CI!
 */
 
-$active_group = 'default';
+switch (C_ENVIRONMENT) {
+    case 'development':
+        $active_group = 'development';
+        break;
+    case 'staging':
+        $active_group = 'staging';
+        break;
+    default:
+        $active_group = 'production';
+        break;
+}
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
+$db = array();
+
+$db['development']['hostname'] = 'CHANGEME';
+$db['development']['username'] = 'CHANGEME';
+$db['development']['password'] = 'CHANGEME';
+$db['development']['database'] = 'CHANGEME';
+$db['development']['dbdriver'] = 'mysql';
+$db['development']['dbprefix'] = '';
+$db['development']['pconnect'] = FALSE;
+$db['development']['db_debug'] = TRUE;
+$db['development']['cache_on'] = FALSE;
+$db['development']['cachedir'] = '';
+$db['development']['char_set'] = 'utf8';
+$db['development']['dbcollat'] = 'utf8_unicode_ci';
+$db['development']['swap_pre'] = '';
+$db['development']['autoinit'] = TRUE;
+$db['development']['stricton'] = TRUE;
+
+$db['staging']['hostname'] = 'CHANGEME';
+$db['staging']['username'] = 'CHANGEME';
+$db['staging']['password'] = 'CHANGEME';
+$db['staging']['database'] = 'CHANGEME';
+$db['staging']['dbdriver'] = 'mysql';
+$db['staging']['dbprefix'] = '';
+$db['staging']['pconnect'] = FALSE;
+$db['staging']['db_debug'] = FALSE;
+$db['staging']['cache_on'] = FALSE;
+$db['staging']['cachedir'] = '';
+$db['staging']['char_set'] = 'utf8';
+$db['staging']['dbcollat'] = 'utf8_unicode_ci';
+$db['staging']['swap_pre'] = '';
+$db['staging']['autoinit'] = TRUE;
+$db['staging']['stricton'] = FALSE;
+
+$db['production']['hostname'] = 'CHANGEME';
+$db['production']['username'] = 'CHANGEME';
+$db['production']['password'] = 'CHANGEME';
+$db['production']['database'] = 'CHANGEME';
+$db['production']['dbdriver'] = 'mysql';
+$db['production']['dbprefix'] = '';
+$db['production']['pconnect'] = FALSE;
+$db['production']['db_debug'] = FALSE;
+$db['production']['cache_on'] = FALSE;
+$db['production']['cachedir'] = '';
+$db['production']['char_set'] = 'utf8';
+$db['production']['dbcollat'] = 'utf8_unicode_ci';
+$db['production']['swap_pre'] = '';
+$db['production']['autoinit'] = TRUE;
+$db['production']['stricton'] = FALSE;
 
 
 /* End of file database.php */

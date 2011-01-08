@@ -1,4 +1,32 @@
 <?php
+/*
+|---------------------------------------------------------------
+| ENVIRONMENT SETTINGS
+|---------------------------------------------------------------
+|
+| Automatically set the environment. We use this to switch between 
+| databases, set error, profiler and log settings, and such, according to 
+| environment. We also set some non-default Codeigniter variables here.
+| This is an Accent Interactive addition.
+|
+| @TODO Add this section to index.php again, on updating CI!
+*/
+
+    define('C_BASE_PATH', dirname(realpath(dirname(__FILE__))) . C_DS);
+
+    // Set environment we are currently in, based on path
+    if (stristr(C_BASE_PATH, 'D:\htdocs')) {
+        define('C_ENVIRONMENT', 'development');
+    }
+    elseif (stristr(C_BASE_PATH, '/home/ongestoord/domains/eentweetest.nl')) {
+        define('C_ENVIRONMENT', 'staging');
+    }
+    else {
+        define('C_ENVIRONMENT', 'production');
+    }
+    
+    ini_get('date.timezone') != '' || date_default_timezone_set('GMT');
+    define('C_DS', DIRECTORY_SEPARATOR);
 
 /*
  *---------------------------------------------------------------
@@ -9,8 +37,22 @@
  * reasons you are encouraged to change this when your site goes live.
  * For more info visit:  http://www.php.net/error_reporting
  *
+ * Accent Interactive addition: we use the environments to dynamically 
+ * set error reporting. 
+ * 
+ * @TODO Add this section to index.php again, on updating CI!
  */
-	error_reporting(E_ALL);
+	switch (C_ENVIRONMENT) {
+        case 'development':
+            error_reporting(E_ALL | E_STRICT);
+            break;
+        case 'staging':
+            error_reporting(0);
+            break;
+        default:
+            error_reporting(0);
+            break;
+    }
 
 /*
  *---------------------------------------------------------------
