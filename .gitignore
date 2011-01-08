@@ -1,3 +1,5 @@
 /.project
 /.settings
 /.buildpath
+data/logs/*.php
+data/cache/*
