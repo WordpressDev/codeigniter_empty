@@ -9,6 +9,7 @@ class Welcome extends Controller {
 	
 	function index()
 	{
+		log_message('notice', 'A default notice log entry');
 		$this->load->view('welcome_message');
 	}
 }

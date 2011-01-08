@@ -178,10 +178,11 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
 | threshold determines what gets logged. Threshold options are:
 |
 |	0 = Disables logging, Error logging TURNED OFF
-|	1 = Error Messages (including PHP errors)
-|	2 = Debug Messages
-|	3 = Informational Messages
-|	4 = All Messages
+|   1 = Error Messages (including PHP errors)
+|   2 = Notice - this is a custom type of logging threshold!!!
+|   3 = Debug Messages
+|   4 = Informational Messages
+|   5 = All Messages - This is 4 in a default CI setup!!!
 |
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
@@ -195,10 +196,10 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
         $config['log_threshold'] = 4;
     }
     elseif (C_ENVIRONMENT == 'staging') {
-        $config['log_threshold'] = 1;
+        $config['log_threshold'] = 2;
     }
     else {
-        $config['log_threshold'] = 1;
+        $config['log_threshold'] = 2;
     }
 
 /*
