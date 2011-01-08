@@ -208,9 +208,9 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
 |
 | Leave this BLANK unless you would like to set something other than the default
 | system/logs/ folder.  Use a full server path with trailing slash.
-|
+| @TODO Non-default setting, change on updating CI!
 */
-$config['log_path'] = '';
+$config['log_path'] = '../data/logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -230,9 +230,9 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |
 | Leave this BLANK unless you would like to set something other than the default
 | system/cache/ folder.  Use a full server path with trailing slash.
-|
+| @TODO Non-default setting, change on updating CI!
 */
-$config['cache_path'] = '';
+$config['cache_path'] = '../data/cache/';
 
 /*
 |--------------------------------------------------------------------------
