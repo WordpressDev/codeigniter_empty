@@ -1,0 +1,19 @@
+h1. Modified empty Codeigniter install
+
+Based on regular Codeigniter 2.0 setup; commit 2129 https://bitbucket.org/ellislab/codeigniter/changeset/c91f50b04b13
+
+Most important custom specs:
+* Index.php has been removed and .htaccess added.
+* All folder are outside webroot.
+* Environment variable is dynamically set in C_ENVIRONMENT.
+* Error reporting, database en base url are dynamically set based on C_ENVIRONMENT.
+* A new log type is available: 'notice' (threshold 2). We use this for non-error messages that we need to show up in logs on production environment.  
+* Default language is Dutch.
+* MY_Controller and MY_Model are available in folder application/core.
+* Simpletest has been integrated (https://github.com/ericbarnes/codeigniter-simpletest).
+* A general helper is available with some handy functions.
+* A handy Image library is available in application/libraries, if you wish to use it.
+* A handy MY_Pagination library is available in application/libraries, if you wish to use it.
+* A handy Autoform library is available in application/libraries, if you wish to use it.
+
+For a detailed listing of all changes, see git log.
