@@ -37,7 +37,7 @@ switch (C_ENVIRONMENT) {
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "index.php";
+$config['index_page'] = "";
 
 /*
 |--------------------------------------------------------------------------
@@ -78,9 +78,9 @@ $config['url_suffix'] = "";
 | This determines which set of language files should be used. Make sure
 | there is an available translation if you intend to use something other
 | than english.
-|
+| @TODO Change this section to config.php again, on updating CI!
 */
-$config['language']	= "english";
+$config['language']	= "dutch";
 
 /*
 |--------------------------------------------------------------------------
@@ -243,7 +243,7 @@ $config['cache_path'] = '../data/cache/';
 | enabled you MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = "";
+$config['encryption_key'] = "replacethiswithyourverysecretstring";
 
 /*
 |--------------------------------------------------------------------------
@@ -257,9 +257,9 @@ $config['encryption_key'] = "";
 | 'time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session';
+$config['sess_cookie_name']		= 'cisession';
 $config['sess_expiration']		= 7200;
-$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_encrypt_cookie']	= TRUE;
 $config['sess_use_database']	= FALSE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
